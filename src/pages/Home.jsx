@@ -6,7 +6,59 @@ import lastCardImage from '../Assets/4Feb-Vish.jpg';
 import sports from '../Assets/Sports.jpg';
 import principal from '../Assets/principal_mam.jpg';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion'; // Import framer-motion for animations
+import styled, { keyframes } from 'styled-components';
+import Carousal from '../components/Carousal';
+
+// Keyframes for animation
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+// Styled-components for cards
+const Card = styled.div`
+  width: 100%;
+  max-width: 100%;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 4px solid transparent;
+  transition: transform 0.3s, border-color 0.3s;
+  animation: ${fadeInUp} 0.5s ease-out;
+
+  &:hover {
+    transform: scale(1.05);
+    border-color: ${props => props.borderColor || 'transparent'};
+  }
+
+  img {
+    width: 100%;
+    height: 48%;
+    object-fit: cover;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #4a4a4a;
+  }
+`;
 
 const HomePage = () => {
   const text = "Educating girls since 1938, empowering women for a brighter future.";
@@ -37,41 +89,35 @@ const HomePage = () => {
             Our Motive
           </h2>
           <div className="flex flex-col md:flex-row md:space-x-8 justify-center">
-            <div className="w-full md:w-1/3 bg-white shadow-lg rounded-lg overflow-hidden border-4 border-transparent ring-4 ring-green-400 ring-opacity-50 transition-transform transform hover:scale-105 hover:ring-blue-400 hover:ring-opacity-70">
-              <img src={Deep} alt="Empowerment" className="w-full h-48 object-cover"/>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  Empowerment
-                </h3>
-                <p className="text-gray-700 text-lg leading-relaxed">
+            <Card borderColor="ring-green-400">
+              <img src={Deep} alt="Empowerment" />
+              <div className="content">
+                <h3>Empowerment</h3>
+                <p>
                   Our mission is to empower young girls through quality education and holistic development.
                 </p>
               </div>
-            </div>
+            </Card>
 
-            <div className="w-full md:w-1/3 bg-white shadow-lg rounded-lg overflow-hidden border-4 border-transparent ring-4 ring-blue-400 ring-opacity-50 transition-transform transform hover:scale-105 hover:ring-green-400 hover:ring-opacity-70">
-              <img src={Nss} alt="Excellence" className="w-full h-48 object-cover"/>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  Excellence
-                </h3>
-                <p className="text-gray-700 text-lg leading-relaxed">
+            <Card borderColor="ring-blue-400">
+              <img src={Nss} alt="Excellence" />
+              <div className="content">
+                <h3>Excellence</h3>
+                <p>
                   We strive for excellence in academics and character-building to prepare our students for a brighter future.
                 </p>
               </div>
-            </div>
+            </Card>
 
-            <div className="w-full md:w-1/3 bg-white shadow-lg rounded-lg overflow-hidden border-4 border-transparent ring-4 ring-yellow-400 ring-opacity-50 transition-transform transform hover:scale-105 hover:ring-red-400 hover:ring-opacity-70">
-              <img src={lastCardImage} alt="Community" className="w-full h-48 object-cover"/>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  Community
-                </h3>
-                <p className="text-gray-700 text-lg leading-relaxed">
+            <Card borderColor="ring-yellow-400">
+              <img src={lastCardImage} alt="Community" />
+              <div className="content">
+                <h3>Community</h3>
+                <p>
                   Building a strong community through collaboration and support to foster growth and learning.
                 </p>
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
@@ -105,55 +151,39 @@ const HomePage = () => {
             Student Results
           </h2>
           <div className="flex flex-col md:flex-row md:space-x-8 justify-center">
-            <motion.div 
-              className="w-full md:w-1/3 bg-white shadow-lg rounded-lg overflow-hidden border-4 border-transparent ring-4 ring-green-400 ring-opacity-50 transition-transform transform hover:scale-105 hover:ring-blue-400 hover:ring-opacity-70"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  60% Excellence
-                </h3>
-                <p className="text-gray-700 text-lg leading-relaxed">
+            <Card borderColor="ring-green-400">
+              <div className="content">
+                <h3>60% Excellence</h3>
+                <p>
                   Achieved by 25% of our students, reflecting solid academic performance and dedication.
                 </p>
               </div>
-            </motion.div>
+            </Card>
 
-            <motion.div 
-              className="w-full md:w-1/3 bg-white shadow-lg rounded-lg overflow-hidden border-4 border-transparent ring-4 ring-blue-400 ring-opacity-50 transition-transform transform hover:scale-105 hover:ring-green-400 hover:ring-opacity-70"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  75% Excellence
-                </h3>
-                <p className="text-gray-700 text-lg leading-relaxed">
+            <Card borderColor="ring-blue-400">
+              <div className="content">
+                <h3>75% Excellence</h3>
+                <p>
                   Achieved by 15% of our students, showcasing exceptional dedication and high academic standards.
                 </p>
               </div>
-            </motion.div>
+            </Card>
 
-            <motion.div 
-              className="w-full md:w-1/3 bg-white shadow-lg rounded-lg overflow-hidden border-4 border-transparent ring-4 ring-yellow-400 ring-opacity-50 transition-transform transform hover:scale-105 hover:ring-red-400 hover:ring-opacity-70"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9 }}
-            >
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  50% Excellence
-                </h3>
-                <p className="text-gray-700 text-lg leading-relaxed">
+            <Card borderColor="ring-yellow-400">
+              <div className="content">
+                <h3>50% Excellence</h3>
+                <p>
                   Achieved by 40% of our students, demonstrating good performance and commitment to their studies.
                 </p>
               </div>
-            </motion.div>
+            </Card>
           </div>
         </div>
+      </section>
+
+      {/* carousal */}
+      <section className='m-5'>
+        <Carousal/>
       </section>
     </div>
   );

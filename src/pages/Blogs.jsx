@@ -1,20 +1,22 @@
 import React from 'react';
 
-
 const Blogs = () => {
   return (
-    <div>
-    
-      <section className="py-10 px-4">
-        <h1 className="text-4xl font-bold text-center mb-8">Our Blogs</h1>
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {/* Example Blog Post */}
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h2 className="text-2xl font-bold mb-2">Blog Title 1</h2>
-            <p className="text-gray-700">This is a short description of the blog post content. Read more to dive into the article...</p>
-            <a href="/blogs/1" className="mt-4 inline-block text-blue-600 hover:underline">Read More</a>
-          </div>
-          {/* Repeat for more blogs */}
+    <div className="bg-gray-100 min-h-screen">
+      <section className="py-10 px-4 max-w-6xl mx-auto">
+        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">Our Blogs</h1>
+
+        <div className="flex justify-between gap-8 mb-8">
+          <video 
+            src="https://res.cloudinary.com/bazeercloud/video/upload/v1726383214/TestFolder/vdo2_xjke9i.mp4" 
+            controls
+            className="w-full max-w-[45%] rounded-lg shadow-lg"
+          />
+          <video 
+            src="https://res.cloudinary.com/bazeercloud/video/upload/v1726384671/TestFolder/culture_hvnycc.mp4" 
+            controls
+            className="w-full max-w-[45%] rounded-lg shadow-lg"
+          />
         </div>
       </section>
     </div>
