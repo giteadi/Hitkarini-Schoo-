@@ -19,7 +19,7 @@ const Navbar = () => {
             className="h-12 w-12 object-cover rounded-full"
           />
           <h1 className="ml-3 text-white text-xl md:text-2xl font-bold">
-          HITKARINI GIRLS HR.SEC SCHOOL
+         B.M.D HITKARINI GIRLS HR.SEC SCHOOL DIXITPURA
           </h1>
         </div>
 

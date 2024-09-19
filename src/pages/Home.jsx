@@ -3,7 +3,7 @@ import schoolImage from '../Assets/School.jpg';
 import Deep from '../Assets/Deep.jpg';
 import Nss from '../Assets/NSS.jpg';
 import lastCardImage from '../Assets/4Feb-Vish.jpg';
-import sports from '../Assets/Sports.jpg';
+import xyz from '../Assets/Sports.jpg'
 import principal from '../Assets/principal_mam.jpg';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
@@ -70,7 +70,7 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 text-center p-4 max-w-2xl mx-auto">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            Welcome to Hitkarini Girls School
+          B.M.D HITKARINI GIRLS HR.SEC SCHOOL DIXITPURA
           </h1>
           <div className="text-2xl font-bold animate-heartbeat">
             {text.split(' ').map((word, index) => (
